@@ -88,6 +88,8 @@ spec:
               value: {{ .Values.wordpressBlogName | quote }}
             - name: WORDPRESS_SKIP_INSTALL
               value: {{ ternary "yes" "no" .Values.wordpressSkipInstall | quote }}
+            - name: WORDPRESS_EXTRA_CONFIG_CONTEXT
+              value: {{ .Values.wordpressExtraConfigContent |  quote }}
             - name: WORDPRESS_TABLE_PREFIX
               value: {{ .Values.wordpressTablePrefix | quote }}
             - name: WORDPRESS_SCHEME
